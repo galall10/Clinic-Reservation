@@ -1,0 +1,98 @@
+<div class="p-10">
+    <h1 class="mb-10 text-xl">
+        Hello Patient
+    </h1>
+    
+    <h2 class="mb-10">My Appointments</h2>
+    
+    <table class="mb-10">
+        <thead>
+            <tr class="text-left bg-gray-400">
+                    <th class="p-5 w-[1%] text-center">Appointment</th>
+                    <th class="p-5 w-[1%]">Doctor</th>
+                    <th class="p-5 w-[1%]"></th>
+                    <th class="p-5 w-[1%]"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="flex h-full">
+                        <div class="flex-1">11/11/2023</div>
+                        <div class="flex-1">1:00 PM</div>
+                    </div>
+                </td>
+                <td>Dr. Samir</td>
+                <td>
+                    <button class="edit">Edit</button>
+                </td>
+                <td>
+                    <button class="cancel">Cancel</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="flex h-full">
+                        <div class="flex-1">15/11/2023</div>
+                        <div class="flex-1">5:00 PM</div>
+                    </div>
+                </td>
+                <td>Dr. Ali</td>
+                <td>
+                    <button class="edit">Edit</button>
+                </td>
+                <td>
+                    <button class="cancel">Cancel</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="flex h-full">
+                        <div class="flex-1">18/11/2023</div>
+                        <div class="flex-1">9:00 AM</div>
+                    </div>
+                </td>
+                <td>Dr. Emad</td>
+                <td>
+                    <button class="edit">Edit</button>
+                </td>
+                <td>
+                    <button class="cancel">Cancel</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="flex h-full">
+                        <div class="flex-1">25/11/2023</div>
+                        <div class="flex-1">9:00 PM</div>
+                    </div>
+                </td>
+                <td>Dr. Ahmed</td>
+                <td>
+                    <button class="edit">Edit</button>
+                </td>
+                <td>
+                    <button class="cancel">Cancel</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="m-auto w-80">
+        <h1 class="text-2xl mb-5">Create new Appointment</h1>
+        <label for="date" class="mr-20">Date: </label>
+        <input class="mb-5" [valueAsDate]="Date" required type="date" id="date">
+        <br>
+        <label for="date" class="mr-20">Hour: </label>
+        <input class="mb-5" type="time" [value]="getTime()" id="date" required />
+        <br>
+        <label for="doctor" class="mr-20">Doctor: </label>
+        <select class="mb-5" id="doctor" required>
+            <option>Dr. Samir</option>
+            <option>Dr. Ahmed</option>
+            <option>Dr. Emad</option>
+            <option>Dr. Ali</option>
+        </select>
+        <button class="create">Reserve</button>
+
+    </div>
+</div>

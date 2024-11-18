@@ -1,0 +1,51 @@
+<div class="p-10">
+    <h1 class="mb-10 text-xl">
+        Hello Doctor
+    </h1>
+
+    <h2 class="mb-10">My slots</h2>
+    @if (!slots) {
+      <img alt="Loading..." class="m-auto mb-20" src="assets/images/loader.svg" />
+    }
+    @else {
+      <table class="mb-10">
+          <thead>
+              <tr class="text-left bg-gray-400">
+                      <th class="p-5 w-[1%]">Date</th>
+                      <th class="p-5 w-[1%]">Hour</th>
+                      <th class="p-5 w-[1%]"></th>
+                      <th class="p-5 w-[1%]"></th>
+              </tr>
+          </thead>
+          <tbody>
+            @for (slot of slots; track $index) {
+              <tr>
+                <td>{{getFormatteUTCDate(slot.date)}}</td>
+                <td>{{getFormattedTime(slot.hour)}}</td>
+                <td>
+                    <button class="edit">Edit</button>
+                </td>
+                <td (click)="deleteSlot(slot)">
+                    <button class="cancel">Cancel</button>
+                </td>
+            </tr>
+            }
+          </tbody>
+      </table>
+    }
+    @if (!isLoading) {
+      <form (ngSubmit)="submit()" [formGroup]="form" class="m-auto w-80">
+        <h1 class="text-2xl mb-5">Create new slot</h1>
+        <label for="date" class="mr-20">Date: </label>
+        <input [formControl]="date" class="mb-5" required type="date" id="date">
+        <br>
+        <label for="date" class="mr-20">Hour: </label>
+        <input [formControl]="hour" class="mb-5" type="time" id="date" required />
+        <button type="submit" class="create">Add Slot</button>
+    </form>
+    }
+@else {
+  <img alt="Loading..." class="m-auto mb-20" src="assets/images/loader.svg" />
+
+}
+</div>

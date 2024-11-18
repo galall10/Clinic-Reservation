@@ -1,0 +1,19 @@
+tbody tr td {
+    @apply p-5;
+}
+
+tbody tr td button {
+    @apply w-full py-2 rounded-lg;
+}
+
+tbody tr td button.edit {
+    @apply bg-green-500;
+}
+
+tbody tr td button.cancel {
+    @apply bg-red-500;
+}
+
+.create {
+    @apply px-5 py-2 rounded-md w-full bg-blue-500;
+}

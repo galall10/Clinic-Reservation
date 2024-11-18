@@ -1,0 +1,18 @@
+<div class="flex h-screen bg-gray-500 justify-center items-center">
+    <form class="p-8 rounded-md bg-white w-[352px] h-[332px]" (ngSubmit)="submit()">
+      <div class="flex items-center justify-center h-full" *ngIf="loading; else form">
+        <img alt="Loading..." src="assets/images/loader.svg" />
+      </div>
+      <ng-template #form>
+        <h1 class="font-medium text-2xl mb-8">Login</h1>
+        <input type="email" placeholder="Email" [formControl]="email" class="form-input">
+        <br>
+        <input type="password" placeholder="Password" [formControl]="password" class="form-input">
+        <span class="block mt-4">Don't have an account? <a class="text-blue-400" [routerLink]="['/register']">Register now!</a></span>
+        <div class="text-center mt-4">
+            <input type="submit" class="rounded-lg cursor-pointer px-5 py-2 bg-blue-600">
+        </div>
+      </ng-template>
+
+    </form>
+</div>

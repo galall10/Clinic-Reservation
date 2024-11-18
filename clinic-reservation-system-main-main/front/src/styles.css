@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-input {
+  @apply w-72 mb-5 rounded-md py-1 px-2 border border-[#333];
+}
